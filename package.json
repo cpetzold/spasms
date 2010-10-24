@@ -9,7 +9,7 @@
     { "name": "Nathan" }
   ],
   "dependencies": {
-    "express": ">= 1.0",
+    "express": ">= 1.0.0rc4",
     "connect": ">= 0.2.7",
     "jade": ">= 0.5.4" 
   },

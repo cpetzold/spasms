@@ -12,6 +12,7 @@ body {
   padding:0;
   margin:0;
   font: 14px "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+  color:#1C140D;
 }
 #header, #content, #footer{
   width:1024px;
@@ -27,9 +28,13 @@ body {
   float:left;
 }
 
+#logo h1{
+  font-size:30px;
+}
+
 ul#menu{
   list-style-type:none;
-  width:400px;
+  width:100px;
   float:right;
 }
 
@@ -42,6 +47,7 @@ ul#menu li a{
 background-color: #CBE86B;
 text-decoration:none;
 color:#1C140D;
+margin:0 3px;
 }
 
 #counter{
@@ -86,19 +92,61 @@ margin-top:20px;
   text-align:right;
 }
 
-ul#scores{
-  list-style-type:none;
+#scores{
+  width:350px;
+  overflow:hidden;
 }
 
-#scores li.wrong{
-  color:
+#scores h2{
+  font-size:30px;
+  margin:5px 0 0 0;
 }
+
+#scores ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+#scores ul li{
+  clear:both;
+  font-size:16px;
+  padding:4px 8px;
+  overflow:hidden;
+}
+
+#scores ul li.wrong{
+  background-color:#d4625c;
+}
+
+#scores ul li .place{
+  width:40px;
+  float:left;
+  font-size:40px;
+  
+}
+
+#scores ul li .name{
+  width:150px;
+  float:left;
+  margin-top:12px;
+}
+
+#scores ul li .score{
+  width:50px;
+  float:left;
+  margin-top:12px;
+}
+
 
 #footer{
 text-align:center;
-color: #CBE86B;
+color: #7e9042;
+padding:30px 0;
+background-color:#F2E9E1;
+margin-top:15px;
 }
 
 #footer a{
-color: #CBE86B;
+color: #7e9042;
 }

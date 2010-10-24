@@ -22,7 +22,6 @@ app.configure('production', function(){
 });
 
 app.get('/', function(req, res){
-  console.log(sys.inspect(req));
   res.render('index.jade', {
     locals: {
       title: 'sms-game'
@@ -31,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/sms', function(req, res){
-  console.log(req.toString());
+  console.log(sys.inspect(req));
 });
 
 

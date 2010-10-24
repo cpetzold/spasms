@@ -30,7 +30,10 @@ app.get('/', function(req, res){
 });
 
 app.get('/sms', function(req, res){
-  console.log(sys.inspect(req));
+  var from =req.query.From;
+  var msg = req.query.Body;
+  
+  checkResponse(msg);
 });
 
 
@@ -39,16 +42,12 @@ console.log("Game on! (port: " + port + ")");
 if (!module.parent) app.listen(port);
 
 var io = require('socket.io').listen(app);
-var buffer = []; 
 
 io.on('connection', function(client){
-  client.send({ buffer: buffer });
   client.broadcast({ announcement: client.sessionId + ' connected' });
   
   client.on('message', function(message){
     var msg = { message: [client.sessionId, message ]};
-    buffer.push(msg);
-    if(buffer.length > 15) buffer.shift();
     clent.broadcast(msg);
   });
   

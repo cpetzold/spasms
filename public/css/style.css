@@ -1,0 +1,49 @@
+/*
+http://www.colourlovers.com/palette/359978/w_o_r_d_l_e_s_s_.
+Colors: 
+#FFFFF
+#CBE86B
+#F2E9E1
+#1C140D
+
+*/
+
+body {
+  padding:0;
+  margin:0;
+  font: 14px "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+}
+#header, #content, #footer{
+  width:1024px;
+  margin:0 auto;
+}
+
+ul#menu{
+  list-style-type:none;
+}
+
+
+#word{
+font-size:100px;
+padding:15px 30px;
+background-color: #CBE86B;
+border: 1px dotted #1C140D;
+margin:20px;
+}
+
+ul#scores{
+  list-style-type:none;
+}
+
+#scores li.wrong{
+  color:
+}
+
+#footer{
+text-align:center;
+color: #CBE86B;
+}
+
+#footer a{
+color: #CBE86B;
+}

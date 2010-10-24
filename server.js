@@ -1,5 +1,6 @@
 var express = require('express'),
-connect = require('connect');
+    connect = require('connect'),
+    sys = require('sys');
 
 var app = module.exports = express.createServer();
 
@@ -21,6 +22,7 @@ app.configure('production', function(){
 });
 
 app.get('/', function(req, res){
+  console.log(sys.inspect(req));
   res.render('index.jade', {
     locals: {
       title: 'sms-game'
@@ -29,7 +31,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/sms', function(req, res){
-  console.log('sms', req, res);
+  console.log(req.toString());
 });
 
 

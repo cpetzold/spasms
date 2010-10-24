@@ -8,16 +8,21 @@ html
     script(type='text/javascript', src='/Socket.IO/socket.io.js')
     script(type='text/javascript', src='/js/main.js')
   body
-    #header 
-      #logo
-        h1 Thumb War
-      ul#menu
-        li 
-          a(href="/signup") Signup
-        li
-          a(href="/faq") FAQ
-      #signup
-        form
-          input(type='text', placeholder='Phone Number')
-    #content!= body
-    #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>
+    #wrapper
+      #header 
+        #logo
+          h1 Thumb War
+        ul#menu
+          li 
+            a#signup(href="#") Signup
+          li
+            a(href="/faq") FAQ
+      #content!= body
+        #signup-form
+          h2 Signup on Thumb War to claim your score
+          form
+            input#phone(type='text', placeholder='Phone Number', name='phone')
+            input#username(type='text', placeholder='Desired Username', name='username')
+            input#password(type='password', placeholder='Password', name='password')
+            input#submit(type='submit')
+      #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>

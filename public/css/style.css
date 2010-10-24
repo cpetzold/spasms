@@ -23,9 +23,10 @@ a:hover{
   text-decoration:none;
 }
 
-#header, #content, #footer{
+#wrapper{
   width:1024px;
   margin:0 auto;
+  position:relative;
 }
 
 h1, h2{
@@ -77,8 +78,27 @@ ul#menu li a:hover{
   background-color:#7e9042;
 }
 
-#signup{
+#signup-form{
   display:none;
+  width:250px;
+  position:absolute;
+  top:60px;
+  right:10px;
+  background-color:#F2E9E1;
+  padding:15px;
+  border: 1px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#signup-form h2{
+  margin-top:0;
+}
+
+#signup-form input{
+  width:200px;
+  font-size:16px;
 }
 
 #counter{

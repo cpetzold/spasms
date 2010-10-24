@@ -1,13 +1,7 @@
-
-/**
- * Module dependencies.
- */
 var express = require('express'),
     connect = require('connect');
 
 var app = module.exports = express.createServer();
-
-// Configuration
 
 app.configure(function(){
     app.set('views', __dirname + '/views');
@@ -25,8 +19,6 @@ app.configure('development', function(){
 app.configure('production', function(){
    app.use(connect.errorHandler()); 
 });
-
-// Routes
 
 app.get('/', function(req, res){
     res.render('index.jade', {

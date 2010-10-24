@@ -11,7 +11,8 @@
   "dependencies": {
     "express": ">= 1.0.0rc4",
     "connect": ">= 0.2.7",
-    "jade": ">= 0.5.4" 
+    "jade": ">= 0.5.4",
+    "socket.io": ">= 0.5.2"
   },
   "engines": { "node": ">= 0.2.0" }
 }

@@ -44,15 +44,15 @@ if (!module.parent) app.listen(port);
 var io = require('socket.io').listen(app);
 
 io.on('connection', function(client){
-  client.broadcast({ announcement: client.sessionId + ' connected' });
+//  client.broadcast({ announcement: client.sessionId + ' connected' });
   
   client.on('message', function(message){
     var msg = { message: [client.sessionId, message ]};
-    clent.broadcast(msg);
+    client.broadcast({message: 'test'});
   });
   
   client.on('disconnect', function(){
-    client.broadcast({ announcement: client.sessionId + ' disconnected' });
+//    client.broadcast({ announcement: client.sessionId + ' disconnected' });
   })
   
 });

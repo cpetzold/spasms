@@ -14,13 +14,28 @@ body {
   font: 14px "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
   color:#1C140D;
 }
+
+a{
+  color:#1C140D;
+}
+
+a:hover{
+  text-decoration:none;
+}
+
 #header, #content, #footer{
   width:1024px;
   margin:0 auto;
 }
 
+h1, h2{
+  font-family: 'Yanone Kaffeesatz';
+}
+
 #header{
   overflow:hidden;
+  border-bottom:1px solid #F2E9E1;
+  margin-bottom:15px;
 }
 
 #logo{
@@ -29,13 +44,15 @@ body {
 }
 
 #logo h1{
-  font-size:30px;
+  font-size:36px;
+  margin: 15px 0 0 0;
 }
 
 ul#menu{
   list-style-type:none;
   width:100px;
   float:right;
+  margin:36px 0 0 0;
 }
 
 ul#menu li{
@@ -48,6 +65,10 @@ background-color: #CBE86B;
 text-decoration:none;
 color:#1C140D;
 margin:0 3px;
+}
+
+#signup{
+  display:none;
 }
 
 #counter{
@@ -74,17 +95,24 @@ margin:0 3px;
 
 #word{
   clear:both;
+    font-family: 'Yanone Kaffeesatz';
 font-size:60px;
 padding:15px 30px;
 background-color: #CBE86B;
-border: 1px dotted #1C140D;
+border: 3px dotted #1C140D;
 margin-top:20px;
 }
 
 #instructions{
   font-size:24px;
-  width:600px;
+  width:650px;
   float:left;
+  margin-bottom:5px;
+}
+
+#instructions span{
+  font-size:28px;
+  color:#7e9042;
 }
 
 #disclaimer{
@@ -93,7 +121,7 @@ margin-top:20px;
 }
 
 #scores{
-  width:350px;
+  width:400px;
   overflow:hidden;
 }
 
@@ -138,15 +166,23 @@ margin-top:20px;
   margin-top:12px;
 }
 
+#scores ul li .message{
+  width:100px;
+  float:left;
+  margin-top:12px;
+}
+
 
 #footer{
-text-align:center;
-color: #7e9042;
-padding:30px 0;
-background-color:#F2E9E1;
-margin-top:15px;
+  background-color: #CBE86B;
+  border-top: 3px dotted #1C140D;
+  border-right: 3px dotted #1C140D;
+  border-left: 3px dotted #1C140D;
+  text-align:center;
+  padding:10px 0 30px 0;
+  margin-top:15px;
 }
 
 #footer a{
-color: #7e9042;
+  
 }

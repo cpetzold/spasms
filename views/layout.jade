@@ -2,16 +2,20 @@
 html
   head
     title= title
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin', type='text/css')
     link(rel='stylesheet', href='/css/style.css')
     script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js')
   body
     #header 
       #logo
-        h1 Text Tester
+        h1 Thumb War
       ul#menu
         li 
           a(href="/signup") Signup
         li
           a(href="/faq") FAQ
+      #signup
+        form
+          input(type='text', placeholder='Phone Number')
     #content!= body
     #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>

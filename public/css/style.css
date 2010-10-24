@@ -50,7 +50,7 @@ h1, h2{
 
 ul#menu{
   list-style-type:none;
-  width:100px;
+  width:130px;
   float:right;
   margin:36px 0 0 0;
 }
@@ -60,11 +60,21 @@ ul#menu li{
 }
 
 ul#menu li a{
-  padding:4px;
-background-color: #CBE86B;
-text-decoration:none;
-color:#1C140D;
-margin:0 3px;
+  padding:4px 8px;
+  background-color: #CBE86B;
+  text-decoration:none;
+  color:#1C140D;
+  margin:0 3px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+ul#menu li a:hover{
+  background-color:#7e9042;
 }
 
 #signup{
@@ -101,6 +111,9 @@ padding:15px 30px;
 background-color: #CBE86B;
 border: 3px dotted #1C140D;
 margin-top:20px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 }
 
 #instructions{
@@ -123,10 +136,11 @@ margin-top:20px;
 #scores{
   width:400px;
   overflow:hidden;
+  margin-top:10px;
 }
 
 #scores h2{
-  font-size:30px;
+  font-size:36px;
   margin:5px 0 0 0;
 }
 
@@ -175,9 +189,7 @@ margin-top:20px;
 
 #footer{
   background-color: #CBE86B;
-  border-top: 3px dotted #1C140D;
-  border-right: 3px dotted #1C140D;
-  border-left: 3px dotted #1C140D;
+  border: 3px dotted #1C140D;
   text-align:center;
   padding:10px 0 30px 0;
   margin-top:15px;

@@ -1,3 +1,0 @@
-[submodule "support/express"]
-	path = support/express
-	url = git://github.com/visionmedia/express.git

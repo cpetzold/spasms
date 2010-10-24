@@ -1,0 +1,16 @@
+{
+  "name": "sms-app",
+  "description": "twilio hack app",
+  "version": "0.0.1",
+  "author": "Pwn Depot",
+  "contributors": [ 
+    { "name": "Brendan" }, 
+    { "name": "Conner" },
+    { "name": "Nathan" }
+  ],
+  "dependencies": { 
+    "express": ">= 1.0",
+    "connect": ">= 0.2.7" 
+  },
+  "engines": { "node": ">= 0.2.0" }
+}

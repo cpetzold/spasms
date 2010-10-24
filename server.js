@@ -30,10 +30,29 @@ app.get('/', function(req, res){
 });
 
 app.get('/sms', function(req, res){
-  console.log(sys.inspect(req));
+  var from =req.query.From;
+  var msg = req.query.Body;
+  
+  checkResponse(msg);
 });
 
 
 var port = 80;
 console.log("Game on! (port: " + port + ")");
 if (!module.parent) app.listen(port);
+
+var io = require('socket.io').listen(app);
+
+io.on('connection', function(client){
+  client.broadcast({ announcement: client.sessionId + ' connected' });
+  
+  client.on('message', function(message){
+    var msg = { message: [client.sessionId, message ]};
+    clent.broadcast(msg);
+  });
+  
+  client.on('disconnect', function(){
+    client.broadcast({ announcement: client.sessionId + ' disconnected' });
+  })
+  
+});

@@ -7,8 +7,11 @@ html
   body
     #header 
       #logo
+        h1 Text Tester
       ul#menu
-        li Signup
-        li FAQ
+        li 
+          a(href="/signup") Signup
+        li
+          a(href="/faq") FAQ
     #content!= body
     #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>

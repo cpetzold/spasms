@@ -18,17 +18,72 @@ body {
   margin:0 auto;
 }
 
-ul#menu{
-  list-style-type:none;
+#header{
+  overflow:hidden;
 }
 
+#logo{
+  width:200px;
+  float:left;
+}
+
+ul#menu{
+  list-style-type:none;
+  width:400px;
+  float:right;
+}
+
+ul#menu li{
+  display:inline;
+}
+
+ul#menu li a{
+  padding:4px;
+background-color: #CBE86B;
+text-decoration:none;
+color:#1C140D;
+}
+
+#counter{
+  width:300px;
+  float:right;
+}
+
+#label{
+  width:200px;
+  font-size:20px;
+  display:inline;
+}
+
+#time{
+  width:100px;
+  font-size:24px;
+  display:inline;
+  padding-left:10px;
+}
+
+#unit{
+  display:inline;
+}
 
 #word{
-font-size:100px;
+  clear:both;
+font-size:60px;
 padding:15px 30px;
 background-color: #CBE86B;
 border: 1px dotted #1C140D;
-margin:20px;
+margin-top:20px;
+}
+
+#instructions{
+  font-size:24px;
+  width:600px;
+  float:left;
+}
+
+#disclaimer{
+  font-size:10px;
+  text-align:right;
 }
 
 ul#scores{

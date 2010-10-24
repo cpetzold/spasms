@@ -37,6 +37,6 @@ app.get('/', function(req, res){
 });
 
 
-var port = 1337;
+var port = 80;
 console.log("Game on! (port: " + port + ")");
 if (!module.parent) app.listen(port);

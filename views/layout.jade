@@ -14,15 +14,21 @@ html
           h1 Thumb War
         ul#menu
           li 
-            a#signup(href="#") Signup
-          li
-            a(href="/faq") FAQ
+            a#signup(href="#") Sign Up
+          li 
+            a#signin(href="#") Sign In
       #content!= body
         #signup-form
-          h2 Signup on Thumb War to claim your score
+          h2 Create an account to claim your score
           form
             input#phone(type='text', placeholder='Phone Number', name='phone')
             input#username(type='text', placeholder='Desired Username', name='username')
             input#password(type='password', placeholder='Password', name='password')
-            input#submit(type='submit')
+            input#submit(type='submit', value="Sign Up")
+        #signin-form
+          h2 Sign In
+          form
+            input#username(type='text', placeholder='Username', name='username')
+            input#password(type='password', placeholder='Password', name='password')
+            input#submit(type='submit', value="Sign In")
       #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>

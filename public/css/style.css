@@ -51,7 +51,7 @@ h1, h2{
 
 ul#menu{
   list-style-type:none;
-  width:130px;
+  width:210px;
   float:right;
   margin:36px 0 0 0;
 }
@@ -97,6 +97,29 @@ ul#menu li a:hover{
 }
 
 #signup-form input{
+  width:200px;
+  font-size:16px;
+}
+
+#signin-form{
+  display:none;
+  width:250px;
+  position:absolute;
+  top:60px;
+  right:10px;
+  background-color:#F2E9E1;
+  padding:15px;
+  border: 1px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#signin-form h2{
+  margin-top:0;
+}
+
+#signin-form input{
   width:200px;
   font-size:16px;
 }

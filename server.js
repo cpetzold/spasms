@@ -36,6 +36,14 @@ app.get('/sms', function(req, res){
   checkResponse(msg);
 });
 
+app.get('/about', function(req, res){
+    res.render('about.jade', {
+      locals: {
+        title: 'About' 
+      }
+    });
+})
+
 
 var port = 80;
 console.log("Game on! (port: " + port + ")");

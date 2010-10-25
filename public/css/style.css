@@ -272,6 +272,16 @@ border-radius: 10px;
   margin-top:12px;
 }
 
+.question{
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.question p{
+  font-weight:normal;
+  margin-left:20px;
+}
+
 
 #footer{
   background-color: #CBE86B;

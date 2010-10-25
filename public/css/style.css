@@ -35,7 +35,7 @@ h1, h2{
 
 #header{
   overflow:hidden;
-  border-bottom:1px solid #F2E9E1;
+  border-bottom:1px solid #bad562;
   margin-bottom:15px;
 }
 
@@ -45,13 +45,18 @@ h1, h2{
 }
 
 #logo h1{
+    margin: 15px 0 0 0;
+}
+
+#logo h1 a{
   font-size:36px;
-  margin: 15px 0 0 0;
+  text-decoration:none;
+  color:#7E9042;
 }
 
 ul#menu{
   list-style-type:none;
-  width:210px;
+  width:230px;
   float:right;
   margin:36px 0 0 0;
 }
@@ -66,6 +71,7 @@ ul#menu li a{
   text-decoration:none;
   color:#1C140D;
   margin:0 3px;
+  border: 1px solid #bad562;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
@@ -75,7 +81,7 @@ ul#menu li a{
 }
 
 ul#menu li a:hover{
-  background-color:#7e9042;
+  background-color:#bad562;
 }
 
 .close{

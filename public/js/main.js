@@ -14,6 +14,12 @@ socket.send('some data');
 
 $(document).ready(function()
    {
+     
+     $('.close').click(function(){
+       $('#signin-form').hide();
+       $('#signup-form').hide();
+     });
+     
      $('#signup').click(function(){
        $('#signin-form').hide();
        $('#signup-form').toggle();

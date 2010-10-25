@@ -19,6 +19,7 @@ html
             a#signin(href="#") Sign In
       #content!= body
         #signup-form
+          .close x
           h2 Create an account to claim your score
           form
             input#phone(type='text', placeholder='Phone Number', name='phone')
@@ -26,6 +27,7 @@ html
             input#password(type='password', placeholder='Password', name='password')
             input#submit(type='submit', value="Sign Up")
         #signin-form
+          .close x
           h2 Sign In
           form
             input#username(type='text', placeholder='Username', name='username')

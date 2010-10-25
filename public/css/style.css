@@ -78,6 +78,14 @@ ul#menu li a:hover{
   background-color:#7e9042;
 }
 
+.close{
+  float:right;
+  margin-top:-15px;
+  margin-right:-10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
 #signup-form{
   display:none;
   width:250px;

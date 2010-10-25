@@ -96,7 +96,7 @@ ul#menu li a:hover{
   display:none;
   width:250px;
   position:absolute;
-  top:60px;
+  top:80px;
   right:10px;
   background-color:#F2E9E1;
   padding:15px;
@@ -119,7 +119,7 @@ ul#menu li a:hover{
   display:none;
   width:250px;
   position:absolute;
-  top:60px;
+  top:80px;
   right:10px;
   background-color:#F2E9E1;
   padding:15px;
@@ -136,6 +136,10 @@ ul#menu li a:hover{
 #signin-form input{
   width:200px;
   font-size:16px;
+}
+
+#content{
+  overflow:hidden;
 }
 
 #counter{
@@ -181,10 +185,11 @@ ul#menu li a:hover{
 }
 
 #instructions{
-  font-size:24px;
+  font-size:40px;
   width:650px;
   float:left;
   margin-bottom:15px;
+  font-family: 'Yanone Kaffeesatz';
 }
 
 #instructions span{
@@ -203,13 +208,20 @@ ul#menu li a:hover{
 
 #scores{
   width:400px;
+  float:left;
   overflow:hidden;
   margin-top:10px;
+  border:1px solid #bad562;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding:15px 0px;
 }
 
 #scores h2{
   font-size:36px;
-  margin:5px 0 0 0;
+  margin:0;
+  padding:0 15px;
 }
 
 #scores ul{
@@ -249,10 +261,15 @@ ul#menu li a:hover{
   background-color:#ff766f;
 }
 
+#scores ul li div{
+  float:left;
+  margin-top:20px;
+}
+
 #scores ul li .place{
+  margin-top:0;
   width:40px;
   height:40px;
-  float:left;
   font-size:40px;
   border:1px solid #1C140D;
   -webkit-border-radius: 30px;
@@ -262,10 +279,6 @@ ul#menu li a:hover{
   margin-right:10px;
 }
 
-#scores ul li .place:first{
-
-}
-
 #scores ul li .place span{
   font-size:12px;
   vertical-align:top;
@@ -273,20 +286,47 @@ ul#menu li a:hover{
 
 #scores ul li .name{
   width:150px;
-  float:left;
-  margin-top:12px;
 }
 
 #scores ul li .score{
   width:50px;
-  float:left;
-  margin-top:12px;
 }
 
 #scores ul li .message{
   width:100px;
+}
+
+#share{
+  width:450px;
   float:left;
-  margin-top:12px;
+  overflow:hidden;
+   margin-top:10px;
+   border:1px solid #bad562;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   padding:15px;
+   margin-left:15px;
+}
+
+#share h2{
+  font-size:36px;
+  margin:0;
+  padding:0 15px;
+}
+
+#facebook{
+  border:none; 
+  overflow:hidden; 
+  width:350px; 
+  height:80px;
+  margin-top:10px;
+}
+
+.twitter-share-button{
+  margin-top:10px;
+  clear:both;
+  width:100% !important;
 }
 
 .question{

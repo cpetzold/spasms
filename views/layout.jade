@@ -8,16 +8,29 @@ html
     script(type='text/javascript', src='/js/Socket.IO/socket.io.js')
     script(type='text/javascript', src='/js/main.js')
   body
-    #header 
-      #logo
-        h1 Thumb War
-      ul#menu
-        li 
-          a(href="/signup") Signup
-        li
-          a(href="/faq") FAQ
-      #signup
-        form
-          input(type='text', placeholder='Phone Number')
-    #content!= body
-    #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>
+    #wrapper
+      #header 
+        #logo
+          h1 Thumb War
+        ul#menu
+          li 
+            a#signup(href="#") Sign Up
+          li 
+            a#signin(href="#") Sign In
+      #content!= body
+        #signup-form
+          .close x
+          h2 Create an account to claim your score
+          form
+            input#phone(type='text', placeholder='Phone Number', name='phone')
+            input#username(type='text', placeholder='Desired Username', name='username')
+            input#password(type='password', placeholder='Password', name='password')
+            input#submit(type='submit', value="Sign Up")
+        #signin-form
+          .close x
+          h2 Sign In
+          form
+            input#username(type='text', placeholder='Username', name='username')
+            input#password(type='password', placeholder='Password', name='password')
+            input#submit(type='submit', value="Sign In")
+      #footer Made for <a href="http://apihackday.eventbrite.com/">APIHackDay</a> by <a href="http://twitter.com/_nw_">Nathan White</a>, <a href="http://twitter.com/brendannee">Brendan Nee</a>, and <a href="http://twitter.com/cpetzold">Conner Petzold</a>

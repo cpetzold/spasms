@@ -49,7 +49,7 @@ h1, h2{
 }
 
 #logo h1 a{
-  font-size:36px;
+  font-size:42px;
   text-decoration:none;
   color:#7E9042;
 }
@@ -58,7 +58,7 @@ ul#menu{
   list-style-type:none;
   width:230px;
   float:right;
-  margin:36px 0 0 0;
+  margin:43px 0 0 0;
 }
 
 ul#menu li{
@@ -139,21 +139,26 @@ ul#menu li a:hover{
 }
 
 #counter{
-  width:300px;
+  width:180px;
   float:right;
+  padding:10px 30px;
+  background-color: #CBE86B;
+  border: 3px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height:88px;
 }
 
 #label{
   width:200px;
   font-size:20px;
-  display:inline;
 }
 
 #time{
   width:100px;
-  font-size:24px;
+  font-size:50px;
   display:inline;
-  padding-left:10px;
 }
 
 #unit{
@@ -162,22 +167,24 @@ ul#menu li a:hover{
 
 #word{
   clear:both;
-    font-family: 'Yanone Kaffeesatz';
-font-size:60px;
-padding:15px 30px;
-background-color: #CBE86B;
-border: 3px dotted #1C140D;
-margin-top:20px;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+  font-family: 'Yanone Kaffeesatz';
+  font-size:60px;
+  padding:15px 30px;
+  background-color: #CBE86B;
+  border: 3px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width:700px;
+  float:left;
+  min-height:78px;
 }
 
 #instructions{
   font-size:24px;
   width:650px;
   float:left;
-  margin-bottom:5px;
+  margin-bottom:15px;
 }
 
 #instructions span{
@@ -186,8 +193,12 @@ border-radius: 10px;
 }
 
 #disclaimer{
+  clear:both;
   font-size:10px;
   text-align:right;
+  width:700px;
+  float:left;
+  padding:0 30px;
 }
 
 #scores{

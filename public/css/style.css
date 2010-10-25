@@ -35,7 +35,7 @@ h1, h2{
 
 #header{
   overflow:hidden;
-  border-bottom:1px solid #F2E9E1;
+  border-bottom:1px solid #bad562;
   margin-bottom:15px;
 }
 
@@ -45,15 +45,20 @@ h1, h2{
 }
 
 #logo h1{
-  font-size:36px;
-  margin: 15px 0 0 0;
+    margin: 15px 0 0 0;
+}
+
+#logo h1 a{
+  font-size:42px;
+  text-decoration:none;
+  color:#7E9042;
 }
 
 ul#menu{
   list-style-type:none;
-  width:210px;
+  width:230px;
   float:right;
-  margin:36px 0 0 0;
+  margin:43px 0 0 0;
 }
 
 ul#menu li{
@@ -66,6 +71,7 @@ ul#menu li a{
   text-decoration:none;
   color:#1C140D;
   margin:0 3px;
+  border: 1px solid #bad562;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
@@ -75,7 +81,7 @@ ul#menu li a{
 }
 
 ul#menu li a:hover{
-  background-color:#7e9042;
+  background-color:#bad562;
 }
 
 .close{
@@ -90,7 +96,7 @@ ul#menu li a:hover{
   display:none;
   width:250px;
   position:absolute;
-  top:60px;
+  top:80px;
   right:10px;
   background-color:#F2E9E1;
   padding:15px;
@@ -113,7 +119,7 @@ ul#menu li a:hover{
   display:none;
   width:250px;
   position:absolute;
-  top:60px;
+  top:80px;
   right:10px;
   background-color:#F2E9E1;
   padding:15px;
@@ -132,22 +138,31 @@ ul#menu li a:hover{
   font-size:16px;
 }
 
+#content{
+  overflow:hidden;
+}
+
 #counter{
-  width:300px;
+  width:180px;
   float:right;
+  padding:10px 30px;
+  background-color: #CBE86B;
+  border: 3px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height:88px;
 }
 
 #label{
   width:200px;
   font-size:20px;
-  display:inline;
 }
 
 #time{
   width:100px;
-  font-size:24px;
+  font-size:50px;
   display:inline;
-  padding-left:10px;
 }
 
 #unit{
@@ -156,22 +171,25 @@ ul#menu li a:hover{
 
 #word{
   clear:both;
-    font-family: 'Yanone Kaffeesatz';
-font-size:60px;
-padding:15px 30px;
-background-color: #CBE86B;
-border: 3px dotted #1C140D;
-margin-top:20px;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+  font-family: 'Yanone Kaffeesatz';
+  font-size:60px;
+  padding:15px 30px;
+  background-color: #CBE86B;
+  border: 3px dotted #1C140D;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width:700px;
+  float:left;
+  min-height:78px;
 }
 
 #instructions{
-  font-size:24px;
+  font-size:40px;
   width:650px;
   float:left;
-  margin-bottom:5px;
+  margin-bottom:15px;
+  font-family: 'Yanone Kaffeesatz';
 }
 
 #instructions span{
@@ -180,19 +198,30 @@ border-radius: 10px;
 }
 
 #disclaimer{
+  clear:both;
   font-size:10px;
   text-align:right;
+  width:700px;
+  float:left;
+  padding:0 30px;
 }
 
 #scores{
   width:400px;
+  float:left;
   overflow:hidden;
   margin-top:10px;
+  border:1px solid #bad562;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding:15px 0px;
 }
 
 #scores h2{
   font-size:36px;
-  margin:5px 0 0 0;
+  margin:0;
+  padding:0 15px;
 }
 
 #scores ul{
@@ -208,33 +237,106 @@ border-radius: 10px;
   overflow:hidden;
 }
 
+#scores ul li:nth-child(1) .place{
+  background-color: #e1d90a;
+}
+
+#scores ul li:nth-child(2) .place{
+  background-color: #b7b1ae;
+}
+
+#scores ul li:nth-child(3) .place{
+  background-color: #b79e51;
+}
+
+#scores ul li:hover{
+  background-color:#F2E9E1;
+}
+
 #scores ul li.wrong{
-  background-color:#d4625c;
+  background-color:#ed8484;
+}
+
+#scores ul li:hover.wrong{
+  background-color:#ff766f;
+}
+
+#scores ul li div{
+  float:left;
+  margin-top:20px;
 }
 
 #scores ul li .place{
+  margin-top:0;
   width:40px;
-  float:left;
+  height:40px;
   font-size:40px;
-  
+  border:1px solid #1C140D;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding:10px;
+  margin-right:10px;
+}
+
+#scores ul li .place span{
+  font-size:12px;
+  vertical-align:top;
 }
 
 #scores ul li .name{
   width:150px;
-  float:left;
-  margin-top:12px;
 }
 
 #scores ul li .score{
   width:50px;
-  float:left;
-  margin-top:12px;
 }
 
 #scores ul li .message{
   width:100px;
+}
+
+#share{
+  width:450px;
   float:left;
-  margin-top:12px;
+  overflow:hidden;
+   margin-top:10px;
+   border:1px solid #bad562;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   padding:15px;
+   margin-left:15px;
+}
+
+#share h2{
+  font-size:36px;
+  margin:0;
+  padding:0 15px;
+}
+
+#facebook{
+  border:none; 
+  overflow:hidden; 
+  width:350px; 
+  height:80px;
+  margin-top:10px;
+}
+
+.twitter-share-button{
+  margin-top:10px;
+  clear:both;
+  width:100% !important;
+}
+
+.question{
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.question p{
+  font-weight:normal;
+  margin-left:20px;
 }
 
 
@@ -244,8 +346,7 @@ border-radius: 10px;
   text-align:center;
   padding:10px 0 30px 0;
   margin-top:15px;
-}
-
-#footer a{
-  
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }

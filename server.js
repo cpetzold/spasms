@@ -1,10 +1,10 @@
 var express = require('express'),
     connect = require('connect'),
+    Game = require('./lib/game'),
     io = require(__dirname + '/support/socket.io/'),
     sys = require('sys');
 
 var port = 80;
-var start = new Date();
 var app = module.exports = express.createServer();
 
 app.configure(function(){
@@ -32,32 +32,22 @@ app.get('/', function(req, res){
   });
 });
 
+if (!module.parent) {
+  app.listen(port);
+  console.log("Game on! (port: " + port + ")");
+}
+
+var io = io.listen(app);
+var game = new Game(io);
+
 app.get('/sms', function(req, res){
-  
-  var from =req.query.From;
+  var from = req.query.From;
   var msg = req.query.Body;
   
-  
-  if (!players[from]) {
-    players[from] = { room: 1, number: from };
-    console.log(from, 'added to room', players[from].room);
-  }
+  game.onSMS(from, msg);
   
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  
-  if (!entries[from]) { // If this player hasn't sent an entry yet
-    entries[from] = {
-      'from' : from,
-      'msg' : msg,
-      'ts' : (new Date()) - start
-    };
-    io.broadcast(entries[from]);
-    res.end('Thanks for saying "' + msg + '" ' + from + '!\n');
-  } else {
-    res.end('Go away! :(');
-  }
-  
-
+  res.end('Hi ' + from);
 });
 
 app.get('/about', function(req, res){
@@ -66,21 +56,4 @@ app.get('/about', function(req, res){
         title: 'About' 
       }
     });
-})
-
-
-if (!module.parent) {
-  app.listen(port);
-  console.log("Game on! (port: " + port + ")");
-}
-var io = io.listen(app);
-var players = {};
-var entries = {};
-
-io.on('connection', function(client){
-  client.broadcast({ announcement: client.sessionId + ' connected' });
-});
-
-io.on('message', function(o){
-  console.log('woah', o);
 });

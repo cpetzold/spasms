@@ -4,18 +4,31 @@ body {
   font: 14px/20px Verdana;
 }
 
-
-#form {
-  margin: 
+p {
+  margin: 0;
 }
 
-input, button {
+input {
   font-size: 1.5em;
   padding: 0.2em;
+  outline: 0;
+  border: 1px solid #DDDDDD;
 }
 
-.notyet {
-  opacity: 0.2;
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	border-color: #C9C9C9;
+}
+
+#goplay {
+  padding: 0.3em 0.7em;
+  color: #eee;
+  background: #5C4123;
+  border: 0;
+}
+
+#goplay:hover {
+  color: #fff;
 }
 
 #play {

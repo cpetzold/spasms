@@ -1,0 +1,23 @@
+body {
+  background: #efefef;
+  
+  font: 14px/20px Verdana;
+}
+
+
+#form {
+  margin: 
+}
+
+input, button {
+  font-size: 1.5em;
+  padding: 0.2em;
+}
+
+.notyet {
+  opacity: 0.2;
+}
+
+#play {
+  display: none;
+}

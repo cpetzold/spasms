@@ -24,13 +24,6 @@ app.configure('production', function(){
   app.use(connect.errorHandler()); 
 });
 
-app.get('/', function(req, res){
-  res.render('index.jade', {
-    locals: {
-      title: 'sms-game'
-    }
-  });
-});
 
 if (!module.parent) {
   app.listen(port);
@@ -39,6 +32,13 @@ if (!module.parent) {
 
 var io = io.listen(app);
 var game = new Game(io);
+
+
+app.get('/', function(req, res){
+  res.render('room.jade', {
+    layout: false
+  });
+});
 
 app.get('/sms', function(req, res){
   var from = req.query.From;

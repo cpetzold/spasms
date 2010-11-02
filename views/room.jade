@@ -1,0 +1,30 @@
+!!! 5
+html
+  head
+    title spas.ms
+    link(rel='stylesheet', href='/css/room.css')
+  body
+  
+    #join
+      form#form
+        p
+          input#name(name='user[name]', placeholder='Name')
+        p
+          input#phone(name='user[phone]', placeholder='Phone #')
+        p
+          input#goplay(name='submit', type='submit', value='Play!').notyet
+      
+    #play
+      #focus
+        time#timer 10.30 
+        #phrase And what an ignorant little girl she'll think me for asking
+      
+      #submissions
+      
+      
+  
+  
+    script(type='text/javascript', src='/js/jquery.js')
+    script(type='text/javascript', src='/js/jquery.validate.js')
+    script(type='text/javascript', src='/js/socket.io.js')
+    script(type='text/javascript', src='/js/main.js')

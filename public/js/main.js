@@ -1,22 +1,70 @@
-var Game = function() {
-  this.socket = new io.Socket(null, {port: 80});
-  this.socket.connect();
-  this.socket.on('message', this.onMessage);
+(function($) {
   
-  this.socket.send('hi there!');
+var App = function() {
+  this.el = {
+    join: $('#join'),
+    form: $('#form'),
+    name: $('#name'),
+    phone: $('#phone'),
+    goplay: $('#goplay')
+  };
+  
+  // this.el.form.validate({
+  //   debug: console.log,
+  //   rules: {
+  //     name: {
+  //       required: true,
+  //       minlength: 3,
+  //       maxlength: 20
+  //     },
+  //     phone: {
+  //       required: true,
+  //       phoneUS: true
+  //     },
+  //     submitHandler: this.goPlay,
+  //     invalidHandler: function(f, v) {
+  //       console.log(f, v);
+  //     }
+  //   }
+  // });
+  
+  this.el.goplay.click($.proxy(this.goPlay, this));
   
 };
-
-Game.prototype = {
-  onMessage: function(msg) {
-    console.log(msg);
+App.prototype = {
+  goPlay: function(e) {
+    e.preventDefault();
+    
+    var name = this.el.name.val(),
+        phone = this.el.phone.val();
+    
+    this.game = new Game(80);
+    this.game.tryJoin(name, phone);
   }
-  
-  
-  
+ 
 };
 
-var g = new Game();
+var app = new App();
+
+var Game = function(p) {
+  this.socket = new io.Socket(null, {port: p});
+  this.socket.connect();
+  this.socket.on('message', this.onMessage);  
+};
+Game.prototype = {
+  onMessage: function(obj) {
+    console.log(obj);
+  },
+  
+  tryJoin: function(name, phone) {
+    this.socket.send({ 'join': {
+      'username': name,
+      'phone': phone
+    }});
+  }
+};
+
+})(jQuery);
 
 
 // var id = null;

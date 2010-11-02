@@ -1,8 +1,8 @@
-var express = require('express'),
+var sys = require('sys'),
+    express = require('express'),
     connect = require('connect'),
-    Game = require('./lib/game'),
-    io = require(__dirname + '/support/socket.io/'),
-    sys = require('sys');
+    io = require('socket.io'),
+    Game = require('./lib/game');
 
 var port = 80;
 var app = module.exports = express.createServer();

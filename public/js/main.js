@@ -1,6 +1,9 @@
 (function($) {
   
-var App = function() {
+var App = function(p) {
+  this.socket = new io.Socket(null, {port: p});
+  this.game = new Game(this.socket);
+  
   this.el = {
     join: $('#join'),
     form: $('#form'),
@@ -38,31 +41,40 @@ App.prototype = {
     var name = this.el.name.val(),
         phone = this.el.phone.val();
     
-    this.game = new Game(80);
     this.game.tryJoin(name, phone);
   }
  
 };
 
-var app = new App();
-
-var Game = function(p) {
-  this.socket = new io.Socket(null, {port: p});
+var Game = function(socket) {
+  this.socket = socket;
   this.socket.connect();
-  this.socket.on('message', this.onMessage);  
+  this.socket.on('message', $.proxy(this.onMessage, this));  
 };
 Game.prototype = {
-  onMessage: function(obj) {
-    console.log(obj);
+  onMessage: function(actions) {
+    $.each(actions, function(action, data){
+      switch(action) {
+        case 'rejected':
+          console.log('Join rejected:', data.reason);
+          break;
+        case 'newPlayer':
+          console.log('New player:', data.name);
+          break;
+      }
+    })
   },
   
   tryJoin: function(name, phone) {
     this.socket.send({ 'join': {
-      'username': name,
+      'name': name,
       'phone': phone
     }});
   }
 };
+
+
+var app = new App(80);
 
 })(jQuery);
 

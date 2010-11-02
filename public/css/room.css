@@ -5,12 +5,13 @@ body {
 }
 
 p {
-  margin: 0;
+  margin: 5px;
 }
 
 input {
-  font-size: 1.5em;
-  padding: 0.2em;
+  vertical-align: top;
+  font-size: 1.1em;
+  padding: 0.6em;
   outline: 0;
   border: 1px solid #DDDDDD;
 }
@@ -21,13 +22,14 @@ input:focus, textarea:focus {
 }
 
 #goplay {
-  padding: 0.3em 0.7em;
-  color: #eee;
-  background: #5C4123;
-  border: 0;
+  background: #35a732;
+  color: #a9f3a8;
+  border: 1px solid #2d932a;
+  cursor: pointer;
 }
 
 #goplay:hover {
+  background: #32b92e;
   color: #fff;
 }
 

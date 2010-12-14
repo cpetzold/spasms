@@ -40,6 +40,14 @@ app.get('/', function(req, res){
   });
 });
 
+app.get('/about', function(req, res){
+    res.render('about.jade', {
+      locals: {
+        title: 'About' 
+      }
+    });
+});
+
 app.get('/sms', function(req, res){
   var from = req.query.From;
   var msg = req.query.Body;
@@ -48,12 +56,4 @@ app.get('/sms', function(req, res){
   
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hi ' + from);
-});
-
-app.get('/about', function(req, res){
-    res.render('about.jade', {
-      locals: {
-        title: 'About' 
-      }
-    });
 });

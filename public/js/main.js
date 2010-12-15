@@ -60,6 +60,7 @@ var Game = function(socket) {
 };
 Game.prototype = {
   onMessage: function(actions) {
+    console.info(actions);
     
     $.each(actions, $.proxy(function(action, data){
       switch(action) {

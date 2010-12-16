@@ -1,28 +1,27 @@
 !!! 5
 html
   head
-    title spas.ms
+    title Spasms
     link(rel='stylesheet', href='/css/room.css')
   body
-  
-    #join
-      form#form
-        input#name(name='user[name]', placeholder='Name')
-        input#phone(name='user[phone]', placeholder='Phone #')
-        input#goplay(name='submit', type='submit', value='Play!').notyet
-      
-    #play
-      #focus
-        time#timer 0.00
-        #phrase Type me
-      
-      #submissions
-      
+    
+    #top
+      #string
+    
+    #middle
+      #output
       ul#players
-      
-  
-  
+    
+    
+    #bottom
+      form#input
+        input#alias(name='alias', placeholder='Your Alias')
+        input#entry(name='entry', placeholder='Entry')
+        input#submit(name='submit', type='submit', value='Submit').notyet
+    
+    
+    
+    
     script(type='text/javascript', src='/js/jquery.js')
-    script(type='text/javascript', src='/js/jquery.validate.js')
     script(type='text/javascript', src='/js/socket.io.js')
     script(type='text/javascript', src='/js/main.js')

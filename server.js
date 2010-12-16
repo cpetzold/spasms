@@ -1,4 +1,3 @@
-// Look a comment!
 var sys = require('sys'),
     express = require('express'),
     connect = require('connect'),
@@ -15,25 +14,17 @@ app.configure(function(){
   app.use(connect.compiler({ src: __dirname + '/public', enable: ['less'] }));
   app.use(app.router);
   app.use(connect.staticProvider(__dirname + '/public'));
-});
-
-app.configure('development', function(){
+}).configure('development', function(){
   app.use(connect.errorHandler({ dumpExceptions: true, showStack: true })); 
-});
-
-app.configure('production', function(){
+}).configure('production', function(){
   app.use(connect.errorHandler()); 
 });
 
-
-if (!module.parent) {
-  app.listen(port);
-  console.log("Game on! (port: " + port + ")");
-}
+if (!module.parent) app.listen(port);
 
 var io = io.listen(app);
-var game = new Game(io);
-
+var game = new Game;
+game.play();
 
 app.get('/', function(req, res){
   res.render('room.jade', {
@@ -41,19 +32,11 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/about', function(req, res){
-    res.render('about.jade', {
-      locals: {
-        title: 'About' 
-      }
-    });
-});
-
 app.get('/sms', function(req, res){
   var from = req.query.From;
   var msg = req.query.Body;
   
-  game.onSMS(from, msg);
+  game.submit(from, msg);
   
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hi ' + from);

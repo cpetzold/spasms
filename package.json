@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "express": ">= 1.0.0rc4",
+    "expresso": ">= 0.7.0",
     "connect": ">= 0.2.7",
     "jade": ">= 0.5.4",
     "less": ">= 1.0.36",

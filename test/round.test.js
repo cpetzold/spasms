@@ -8,21 +8,21 @@ module.exports = {
     var r = new Round('test');
     
     assert.eql(r.string, 'test');
-    assert.eql(r.time, 1600);
+    assert.eql(r.countdown, 1600);
     assert.eql(r.players, {});
-    assert.eql(r.answers, {});
+    assert.eql(r.submissions, {});
   },
   
   'init: defined timing options': function() {
     var r = new Round('test', {
-      time: 2000
+      countdown: 2000
     });
-    assert.eql(r.time, 2000);
+    assert.eql(r.countdown, 2000);
     
     var r2 = new Round('test', {
       multiplier: 150
     });
-    assert.eql(r2.time, 600);
+    assert.eql(r2.countdown, 600);
   },
   
   'init: defining players': function() {
@@ -33,7 +33,7 @@ module.exports = {
         new Player('2930294931')
       ]
     });
-        
+
     assert.eql(r.players['1234567890'].id, '1234567890');
     assert.eql(r.players['0000000000'].id, '0000000000');
     assert.eql(r.players['2930294931'].id, '2930294931');

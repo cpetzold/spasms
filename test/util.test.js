@@ -11,7 +11,7 @@ module.exports = {
   
   'test String.diff() with two unequal strings': function() {
     var diff = 'this is a test string'.diff('this is a bad string');
-    assert.length(diff, 0);
+    assert.length(diff, 1);
   },
 
 };

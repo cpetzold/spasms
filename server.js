@@ -22,18 +22,25 @@ app.configure(function(){
 if (!module.parent) app.listen(port);
 
 var io = io.listen(app);
-var game = new Game;
-game.play();
+var games = {};
 
-app.get('/', function(req, res){
+app.get('/:room', function(req, res){
+  var room = req.param('room'),
+      game = games[room] || new Game(room);
+      
+  if (!game.active) game.start();
+  
   res.render('room.jade', {
+    locals: {
+      game: game
+    },
     layout: false
   });
 });
 
 app.post('/sms', function(req, res){
-  var from = req.body.From;
-  var msg = req.body.Body;
+  var from = req.param('From');
+  var msg = req.param('Body');
   game.submit(from, msg);
   
   res.send(200);

@@ -4,26 +4,21 @@ html
     title Spasms
     link(rel='stylesheet', href='/css/room.css')
   body
+    #container
+      #top
+        #string Game will start in 10 seconds
     
-    #top
-      #string
+      #middle
+        #output
+        ul#players
     
-    #middle
-      #output
-      ul#players
-      
-    pre= game
-    
-    
-    #bottom
-      form#input
-        input#alias(name='alias', placeholder='Your Alias')
-        input#entry(name='entry', placeholder='Entry')
-        input#submit(name='submit', type='submit', value='Submit').notyet
-    
+      #bottom
+        form#input
+          input.fake
+          input#entry(name='entry', placeholder='Chat: [Enter] - Submit: [Ctrl]+[Enter]')
     
     
     
     script(type='text/javascript', src='/js/jquery.js')
     script(type='text/javascript', src='/js/socket.io.js')
-    script(type='text/javascript', src='/js/main.js')
+    script(type='text/javascript', src='/js/spasms.js')

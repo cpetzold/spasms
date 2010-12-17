@@ -23,10 +23,27 @@ if (!module.parent) app.listen(port);
 
 var io = io.listen(app);
 var games = {};
+function addGame(room) {
+  games[room] = new Game(room);
+  
+  games[room].on('roundStart', function(o){
+    io.broadcast({'roundStart': o});
+  });
+  
+  games[room].on('roundEnd', function(o){
+    io.broadcast({'roundEnd': o});
+  });
+  
+  games[room].on('submit', function(o){
+    io.broadcast({'submit': o});
+  });
+
+  return games[room];
+}
 
 app.get('/:room', function(req, res){
   var room = req.param('room'),
-      game = games[room] || (games[room] = new Game(room));
+      game = games[room] || addGame(room);
       
   if (!game.active) game.start();
   

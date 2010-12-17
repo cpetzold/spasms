@@ -26,7 +26,7 @@ var games = {};
 
 app.get('/:room', function(req, res){
   var room = req.param('room'),
-      game = games[room] || games[room] = new Game(room);
+      game = games[room] || (games[room] = new Game(room));
       
   if (!game.active) game.start();
   

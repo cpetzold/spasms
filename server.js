@@ -26,7 +26,7 @@ var games = {};
 
 app.get('/:room', function(req, res){
   var room = req.param('room'),
-      game = games[room] || new Game(room);
+      game = games[room] || games.push(new Game(room));
       
   if (!game.active) game.start();
   
@@ -41,7 +41,7 @@ app.get('/:room', function(req, res){
 app.post('/sms', function(req, res){
   var from = req.param('From');
   var msg = req.param('Body');
-  game.submit(from, msg);
+  games[Object.keys(games)[0]].submit(from, msg);
   
   res.send(200);
 });

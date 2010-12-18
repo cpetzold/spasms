@@ -5,17 +5,33 @@ html
     link(rel='stylesheet', href='/css/room.css')
   body
     #container
-      #top
-        #string Game will start in 10 seconds
+      #output
+        #scroll
+        
+          .message
+            span.from Conner: 
+            | this is a sample chat message
+            
+          .round
+            .title Round 
+              span.num 1
+            .string this is a test round
+            .timer 0.00
+        
+          .next The next round will start in 
+            time 10
+        
+          .round.active
+            .title Round 
+              span.num 2
+            .string this is an active round
+            .timer 9.53
+            
+          .submission
+        
+      ul#players
     
-      #middle
-        #output
-        ul#players
-    
-      #bottom
-        form#input
-          input.fake
-          input#entry(name='entry', placeholder='Chat: [Enter] - Submit: [Ctrl]+[Enter]')
+      input#input(name='input')
     
     
     

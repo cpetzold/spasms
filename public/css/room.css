@@ -1,7 +1,11 @@
 body {
   background: #efefef;
   font-family: Verdana;
-  font-size: 16px;
+  font-size: 11px;
+}
+ul, p {
+  margin: 0;
+  padding: 0;
 }
 #container {
   position: absolute;
@@ -12,16 +16,37 @@ body {
   left: 10px;
   right: 10px;
 }
-#bottom {
+#output {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 211px;
+  bottom: 40px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+#scroll > div {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+#scroll > div:nth-child(odd) {
+  background: #f8f8f8;
+}
+#players {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 40px;
+  width: 200px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+#input {
   position: absolute;
   left: 5px;
   right: 5px;
   bottom: 5px;
-}
-#entry {
-  position: absolute;
-  right: 0;
-  left: 0;
 }
 input {
   font-size: 16px;
@@ -35,7 +60,4 @@ textarea:hover,
 input:focus,
 textarea:focus {
   border-color: #bbbbbb;
-}
-.fake {
-  visibility: hidden;
 }

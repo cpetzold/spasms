@@ -30,6 +30,10 @@ Spasms.prototype = {
   },
   roundEnd: function(o) {
     
+  },
+  submit: function(o) {
+    var msg = $('<div class="submission">').html(o.msg);
+    this.el.scroll.append(msg);
   }
   
   

@@ -21,19 +21,20 @@ app.configure(function(){
 
 if (!module.parent) app.listen(port);
 
-var io = io.listen(app);
-var games = {};
+var io = io.listen(app),
+    games = {};
+
 function addGame(room) {
   games[room] = new Game(room);
-  
+
   games[room].on('roundStart', function(o){
     io.broadcast({'roundStart': o});
   });
-  
+
   games[room].on('roundEnd', function(o){
     io.broadcast({'roundEnd': o});
   });
-  
+
   games[room].on('submit', function(o){
     io.broadcast({'submit': o});
   });
@@ -41,24 +42,26 @@ function addGame(room) {
   return games[room];
 }
 
-app.get('/:room', function(req, res){
-  var room = req.param('room'),
+function makeRoom(req, res) {
+  var room = req.param('room') || '/',
       game = games[room] || addGame(room);
-      
+
   if (!game.active) game.start();
-  
+
   res.render('room.jade', {
     locals: {
       game: game
     },
     layout: false
   });
-});
+}
 
+app.get('/', makeRoom);
+app.get('/:room', makeRoom);
 app.post('/sms', function(req, res){
   var from = req.param('From');
   var msg = req.param('Body');
   games[Object.keys(games)[0]].submit(from, msg);
-  
+
   res.send(200);
 });

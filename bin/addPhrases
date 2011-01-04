@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var sys = require('sys'),
+    fs = require('fs'),
+    mongoose = require('../lib/support/mongoose');
+
+require('../lib/models/phrase');
+    
+var db = mongoose.connect('mongodb://localhost/spasms'),
+    Phrase = mongoose.Phrase;
+
+fs.readFile(process.argv[2], 'utf8', function(err, data){
+  var phrases = JSON.parse(data);
+
+  phrases.forEach(function(phrase){
+    console.log(phrase);
+    new Phrase({ phrase: phrase }).save();
+  });
+});

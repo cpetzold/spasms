@@ -3,7 +3,7 @@ var sys = require('sys'),
     io = require('socket.io'),
     Game = require('./lib/game');
 
-var port = 80;
+var port = 8080;
 var app = module.exports = express.createServer();
 
 app.configure(function(){
@@ -18,8 +18,6 @@ app.configure(function(){
 }).configure('production', function(){
   app.use(express.errorHandler()); 
 });
-
-if (!module.parent) app.listen(port);
 
 var io = io.listen(app),
     games = {};
@@ -65,3 +63,6 @@ app.post('/sms', function(req, res){
 
   res.send(200);
 });
+
+
+if (!module.parent) app.listen(port);

@@ -2,6 +2,7 @@ body {
   background: #efefef;
   font-family: Verdana;
   font-size: 11px;
+  line-height: 14px;
 }
 ul, p {
   margin: 0;
@@ -11,7 +12,7 @@ ul, p {
   position: absolute;
   background: #dddddd;
   border: 1px solid #cccccc;
-  top: 10px;
+  top: 200px;
   bottom: 10px;
   left: 10px;
   right: 10px;
@@ -23,14 +24,18 @@ ul, p {
   right: 211px;
   bottom: 40px;
   overflow: auto;
+  color: #111;
   background: #fff;
   border: 1px solid #ccc;
 }
 #scroll > div {
   padding: 8px;
-  border-bottom: 1px solid #eee;
 }
-#scroll > div:nth-child(odd) {
+.message {
+  border-bottom: 1px solid #eee;
+  background: #f2f2f2;
+}
+.message:nth-child(odd) {
   background: #f8f8f8;
 }
 #players {
@@ -52,12 +57,65 @@ input {
   font-size: 16px;
   padding: 5px;
   outline: 0;
-  border: 1px solid #cccccc;
+  border: 1px solid #aaa;
   margin: 0;
 }
 input:hover,
 textarea:hover,
 input:focus,
 textarea:focus {
-  border-color: #bbbbbb;
+  border-color: #777;
+}
+.current {
+  box-shadow: 0px 0px 15px #eeeeee;
+  -webkit-box-shadow: 0px 0px 15px #eeeeee;
+  -moz-box-shadow: 0px 0px 15px #eeeeee;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: #f8f8f8;
+}
+.round {
+  font-size: 13px;
+  line-height: 20px;
+}
+.round .info {
+  color: #666;
+  font-weight: bold;
+}
+.round .info .num {
+  color: #444;
+}
+.round .info .timer {
+  font-size: 12px;
+  color: #64bd23;
+}
+.round .phrase {
+  color: #237abd;
+}
+.round .phrase .string {
+  margin-left: 155px;
+}
+.round .entries {
+  list-style: none;
+}
+.round .entries li span {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: right;
+}
+.round .entries li .who {
+  width: 100px;
+  text-align: right;
+  left: 0;
+  color: #ccc;
+  font-size: 12px;
+}
+.round .entries li .when {
+  width: 35px;
+  color: #ccc;
+  font-size: 10px;
+  font-weight: bold;
+}
+.message .from {
+  font-weight: bold;
 }
